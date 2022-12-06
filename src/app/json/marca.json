@@ -1,0 +1,20 @@
+{
+  "marcas": [
+    {
+      "identificar": 1,
+      "descripcion": "FORD"
+    },
+    {
+      "identificar": 2,
+      "descripcion": "NISSA"
+    },
+    {
+      "identificar": 3,
+      "descripcion": "CHEVROLET"
+    },
+    {
+      "identificar": 4,
+      "descripcion": "TOYOTA"
+    }
+  ]
+}

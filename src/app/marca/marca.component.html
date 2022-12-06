@@ -1,0 +1,18 @@
+<h1>Marca</h1>
+<div mat-dialog-content>
+  // Se tiene que agregar funcion // ReactiveFormsModule // FormsModule a
+  app.module de la aplicion
+  <form [formGroup]="marcaForm">
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Nombre de marca</mat-label>
+        <input formControlName="marcaName" matInput placeholder="Ingrese marca" />
+      </mat-form-field>
+    </div>
+  </form>
+
+  <div mat-dialog-actions [align]="'end'">
+    <button mat-raised-button color="red" mat-dialog-close>Cancelar</button>
+    <button mat-raised-button color="blue" (click)="guardarMarca()">Guardar</button>
+  </div>
+</div>
