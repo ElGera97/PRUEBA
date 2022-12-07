@@ -1,6 +1,5 @@
 import {Component, OnInit, ViewChild,} from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
-import {DialogComponent} from './dialog/dialog.component';
 import {MarcaComponent} from './marca/marca.component';
 import {ModeloComponent} from './modelo/modelo.component';
 import {ApiService} from './services/api.service';
@@ -18,7 +17,8 @@ import {MatTableDataSource} from '@angular/material/table';
 export class AppComponent implements OnInit{
   title = 'prueba';
 
-  displayedColumns: string[] = [ 'descripcion', 'id'];
+  displayedColumnsMo: string[] = [ 'descripcion', 'id', 'cilindros'  ];
+  displayedColumnsMa: string[] = [ 'descripcion', 'cilindros', 'modelo', 'puertas', 'marca', 'id' ];
   dataSource: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginatorC: MatPaginator;
@@ -33,14 +33,7 @@ export class AppComponent implements OnInit{
     this.showAllModelos();
     }
 
-  // Funcion para mostrar ventana emergente
-  openDialog() {
-    this.dialog.open(DialogComponent, {
-      width: '30%',
-    });
-
-  }
-
+  // Funcion para mostrar ventana modal
   openDialogMarca() {
     this.dialog.open(MarcaComponent, {
       width: '30%',
@@ -75,6 +68,11 @@ export class AppComponent implements OnInit{
     const errorGet = 'No se pudo obtener la informacion';
     this.api.getModelo().subscribe({
       next: (res) => {
+        //Mostrar array  en MatTableDataSource
+        this.dataSource = new MatTableDataSource(res);
+        this.dataSource.paginator = this.paginatorC;
+        this.dataSource.sort = this.sortC;
+
         console.log(res);
       },
       error: (error) => {

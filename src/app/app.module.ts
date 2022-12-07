@@ -9,7 +9,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
-import { DialogComponent } from './dialog/dialog.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
 // PARA DARLE STILO A INPUT
@@ -27,7 +26,6 @@ import {MatSortModule} from '@angular/material/sort';
   // SE DECLARA EL DIALOG
   declarations: [
     AppComponent,
-    DialogComponent,
     MarcaComponent,
     ModeloComponent,
   ],

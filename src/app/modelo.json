@@ -1,0 +1,30 @@
+{
+  "modelos": [
+    {
+      "descripcion": "prueba",
+      "cilindros": "12",
+      "modelo": "prueba",
+      "puertas": 12,
+      "marca": "prueba",
+      "id": 1
+    },
+    {
+      "descripcion": "hola",
+      "cilindros": "hola",
+      "modelo": "hola",
+      "puertas": 2,
+      "marca": "hola",
+      "id": 2
+    }
+  ],
+  "marcas": [
+    {
+      "marcaName": "Hola",
+      "id": 1
+    },
+    {
+      "marcaName": "otro",
+      "id": 2
+    }
+  ]
+}
