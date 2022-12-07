@@ -1,19 +1,16 @@
 {
-  "posts": [
+  "marcas": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "descripcion": "wqqwew",
+      "id": 1
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "descripcion": "wqqwew",
+      "id": 2
+    },
+    {
+      "descripcion": "weqweqwe",
+      "id": 3
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

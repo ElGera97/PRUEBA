@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {ApiService} from '../services/api.service';
+import {MatDialogRef} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-marca',
@@ -9,7 +11,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class MarcaComponent implements OnInit {
   marcaForm!: FormGroup;
 
-  constructor(private formBuilde: FormBuilder) {}
+  constructor(private formBuilde: FormBuilder, private api: ApiService,
+              private marcaRefer: MatDialogRef<MarcaComponent>) {
+  }
 
   ngOnInit(): void {
     // FOrma para agregar identificadores a la modal
@@ -19,6 +23,22 @@ export class MarcaComponent implements OnInit {
   }
 
   guardarMarca() {
-    console.log('hola');
+    const addSuccesFull = 'Se agrego correctamente';
+    const addFailed = 'Se produjo un error';
+
+    if (this.marcaForm.valid) {
+      this.api.postMarcas(this.marcaForm.value).subscribe({
+        next: (res) => {
+          alert(addSuccesFull);
+          this.marcaForm.reset();
+          this.marcaRefer.close();
+
+        },
+        error: () => {
+          alert(addFailed);
+        },
+      });
+    }
+    console.log(this.marcaForm.value);
   }
 }

@@ -18,6 +18,10 @@ import { MarcaComponent } from './marca/marca.component';
 import { ModeloComponent } from './modelo/modelo.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSortModule} from '@angular/material/sort';
+
 
 @NgModule({
   // SE DECLARA EL DIALOG
@@ -46,6 +50,11 @@ import { HttpClientModule } from '@angular/common/http';
 
     // SERVICES
     HttpClientModule,
+
+    //tabla
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent],

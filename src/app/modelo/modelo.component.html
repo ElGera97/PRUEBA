@@ -1,26 +1,35 @@
 <h1>Modelo</h1>
+
+
 <div mat-dialog-content>
+  <form [formGroup]="modeloForm">
   <mat-form-field appearance="outline">
     <mat-label>Descripcion</mat-label>
-    <input matInput placeholder="Nombre del modelo" />
+    <input formControlName="descripcion"  matInput placeholder="Descripcion" />
   </mat-form-field>
   <mat-form-field appearance="outline">
     <mat-label>Cilindros</mat-label>
-    <input matInput type="number" />
+    <input formControlName="cilindros" matInput/>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Modelo</mat-label>
+    <input formControlName="modelo" matInput />
   </mat-form-field>
   <div mat-dialog-content>
     <mat-form-field appearance="outline">
       <mat-label>Puertas</mat-label>
-      <input matInput placeholder="Numero de puertas" type="number" />
+      <input formControlName ="puertas" matInput placeholder="Numero de puertas" type="number" />
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>Marca</mat-label>
-      <input matInput placeholder="Nombre de marca" />
+      <input formControlName="marca"  matInput placeholder="Nombre de marca" />
     </mat-form-field>
   </div>
+  </form>
+
 
   <div mat-dialog-actions [align]="'end'">
     <button mat-raised-button color="red" mat-dialog-close>Cancelar</button>
-    <button mat-raised-button color="blue">Guardar</button>
+    <button mat-raised-button color="blue" (click)="guardarModelo()">Guardar</button>
   </div>
 </div>
